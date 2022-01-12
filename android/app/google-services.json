@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "90353075883",
+    "project_id": "myroad-6d164",
+    "storage_bucket": "myroad-6d164.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90353075883:android:91f460593b073fc27119ee",
+        "android_client_info": {
+          "package_name": "com.myroad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "90353075883-7jfl4dmr8je9rhdvdohr8qloivsf31hf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeCXR3w-QQZJbCp-WAx0-InDV7ayF9xaU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "90353075883-7jfl4dmr8je9rhdvdohr8qloivsf31hf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
