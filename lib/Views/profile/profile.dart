@@ -1,95 +1,9 @@
+import 'package:dimouzika/Views/menuItem/absence.dart';
+import 'package:dimouzika/Views/menuItem/calendar.dart';
+import 'package:dimouzika/Views/menuItem/cours.dart';
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_calendar/calendar.dart';
-
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.teal[50],
-        child: Row(
-          children: [
-            IconButton(
-                icon: Icon(Icons.home),
-                color: Colors.orangeAccent,
-                iconSize: 43,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MyHomePage()),
-                  );
-                }),
-            IconButton(
-                icon: Icon(Icons.person),
-                color: Colors.orangeAccent,
-                iconSize: 43,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MyProfile()),
-                  );
-                }),
-            IconButton(
-                icon: Icon(Icons.calendar_today),
-                color: Colors.orangeAccent,
-                iconSize: 43,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MyCalendar()),
-                  );
-                }),
-            IconButton(icon: Icon(Icons.attach_money), color: Colors.orangeAccent, iconSize: 43, onPressed: () {}),
-            IconButton(icon: Icon(Icons.file_copy_outlined), color: Colors.orangeAccent, iconSize: 43, onPressed: () {}),
-            IconButton(icon: Icon(Icons.check_box), color: Colors.orangeAccent, iconSize: 43, onPressed: () {}),
-          ],
-        ),
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/font.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Positioned(
-                right: 40,
-                top: 40,
-                width: 80,
-                height: 150,
-                child: Center(
-                  child: Text('Home page', style: TextStyle(color: Colors.black, fontSize: 30.0)),
-                )),
-          ],
-        ),
-      ),
-    );
-  }
-}
+import 'package:dimouzika/Views/menu/menu.dart';
+import 'package:dimouzika/Views/menuItem/pay.dart';
 
 class MyProfile extends StatelessWidget {
   @override
@@ -106,7 +20,7 @@ class MyProfile extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => MyHomePage()),
+                    MaterialPageRoute(builder: (context) => Menu()),
                   );
                 }),
             IconButton(
@@ -129,9 +43,28 @@ class MyProfile extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => MyCalendar()),
                   );
                 }),
-            IconButton(icon: Icon(Icons.attach_money), color: Colors.orangeAccent, iconSize: 43, onPressed: () {}),
-            IconButton(icon: Icon(Icons.file_copy_outlined), color: Colors.orangeAccent, iconSize: 43, onPressed: () {}),
-            IconButton(icon: Icon(Icons.check_box), color: Colors.orangeAccent, iconSize: 43, onPressed: () {}),
+            IconButton(
+                icon: Icon(Icons.attach_money),
+                color: Colors.orangeAccent,
+                iconSize: 43,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Payement()),
+                  );
+                }),
+            IconButton(icon: Icon(Icons.file_copy_outlined), color: Colors.orangeAccent, iconSize: 43, onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Cours()),
+              );
+            }),
+            IconButton(icon: Icon(Icons.check_box), color: Colors.orangeAccent, iconSize: 43, onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Absence()),
+              );
+            }),
           ],
         ),
       ),
@@ -139,7 +72,7 @@ class MyProfile extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/font.png"),
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
           ),
         ),
         child: Column(mainAxisSize: MainAxisSize.max, mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.stretch, children: [
@@ -168,7 +101,7 @@ class MyProfile extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 child: Image.network(
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9xhi8dkApcxc2ARiv2GFNr1EpR94Y0T1WCQ&usqp=CAU',
+                  'https://raw.githubusercontent.com/OussamaZAIBI/imgs/main/IMG_02062.jpg?token=GHSAT0AAAAAABQPNGJQR5AXQ3MGCNSQFFGOYPISZYA',
                 ),
               ),
             ),
@@ -181,7 +114,7 @@ class MyProfile extends StatelessWidget {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(50, 0, 0, 10),
                 child: Text(
-                  'Nom :Jhon',
+                  'Nom :ZAIBI',
                   style: TextStyle(fontSize: 20),
                 ),
               )
@@ -193,7 +126,7 @@ class MyProfile extends StatelessWidget {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(50, 0, 0, 10),
                 child: Text(
-                  'Prénom :Laos',
+                  'Prénom :Oussama',
                   style: TextStyle(fontSize: 20),
                 ),
               )
@@ -205,7 +138,7 @@ class MyProfile extends StatelessWidget {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(50, 0, 0, 10),
                 child: Text(
-                  'E-mail :johnlaos@gmail.com',
+                  'E-mail :oussama.zaibi@supcom.tn',
                   style: TextStyle(fontSize: 20),
                 ),
               )
@@ -229,7 +162,7 @@ class MyProfile extends StatelessWidget {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
                 child: Text(
-                  'Date de naissance:    17/04/2003',
+                  'Date de naissance:    30/08/1999',
                   style: TextStyle(fontSize: 20),
                 ),
               )
@@ -239,65 +172,6 @@ class MyProfile extends StatelessWidget {
 
           //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         ]),
-      ),
-    );
-  }
-}
-
-class MyCalendar extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.teal[50],
-        child: Row(
-          children: [
-            IconButton(
-                icon: Icon(Icons.home),
-                color: Colors.orangeAccent,
-                iconSize: 43,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MyHomePage()),
-                  );
-                }),
-            IconButton(
-                icon: Icon(Icons.person),
-                color: Colors.orangeAccent,
-                iconSize: 43,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MyProfile()),
-                  );
-                }),
-            IconButton(
-                icon: Icon(Icons.calendar_today),
-                color: Colors.orangeAccent,
-                iconSize: 43,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MyCalendar()),
-                  );
-                }),
-            IconButton(icon: Icon(Icons.attach_money), color: Colors.orangeAccent, iconSize: 43, onPressed: () {}),
-            IconButton(icon: Icon(Icons.file_copy_outlined), color: Colors.orangeAccent, iconSize: 43, onPressed: () {}),
-            IconButton(icon: Icon(Icons.check_box), color: Colors.orangeAccent, iconSize: 43, onPressed: () {}),
-          ],
-        ),
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/font.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: SfCalendar(
-          view: CalendarView.day,
-        ),
       ),
     );
   }

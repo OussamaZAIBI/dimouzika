@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:dimouzika/Views/loginPage/login.dart';
-import 'package:dimouzika/Views/profile/profile.dart';
+
+
 
 class SignInController with ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;

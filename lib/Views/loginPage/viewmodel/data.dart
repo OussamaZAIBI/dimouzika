@@ -1,8 +1,8 @@
+import 'package:dimouzika/Views/menu/menu.dart';
 import 'package:flutter/material.dart';
-import 'package:dimouzika/Views/homepage/home.dart';
 import 'package:dimouzika/Views/loginPage/login.dart';
 import 'package:dimouzika/Views/loginPage/viewmodel/logincontroller.dart';
-import 'package:dimouzika/Views/profile/profile.dart';
+
 
 
 class LoadingData extends StatefulWidget with ChangeNotifier {
@@ -29,7 +29,7 @@ class _LoadingDataState extends State<LoadingData> {
                       child: CircularProgressIndicator(),
                     );
                   } else if (snapshot.hasData) {
-                    return MyApp();
+                    return Menu();
                   } else {
                     print(snapshot);
                     return SignIn();

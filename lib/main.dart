@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:dimouzika/Views/homepage/home.dart';
 import 'package:dimouzika/Views/loginPage/viewmodel/logincontroller.dart';
-import 'package:dimouzika/Views/profile/viewmodel/profilecontroller.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -17,10 +16,10 @@ void main() async {
       return MultiProvider(
           providers: [
             ChangeNotifierProvider(create: (_) => SignInController()),
-            ChangeNotifierProvider(create: (_) => SignUpController()),
-            ChangeNotifierProvider(create: (_) => ProfilController())
+            ChangeNotifierProvider(create: (_) => SignUpController())
           ],
-          child: GetMaterialApp(
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
               home: MyApp()));
     },
   ));
